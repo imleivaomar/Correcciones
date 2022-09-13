@@ -1,28 +1,49 @@
+/* fuentes */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
+/* colores */
+:root{
+    --background: rgb(245, 243, 236);
+    --cBackgrdCard: rgb(237, 232, 215);
+    --verdeAzulado: rgb(17, 157, 164);
+    --blancoPlatino: rgb(232, 232, 232);
+    --azulEgipcio: rgb(9, 53, 149);
+    --negroElegante: rgb(5, 5, 5);
+}
+/* normalize */
+*{
+    border: none;
+    box-sizing: border-box;
+    padding:0;
+    margin: 0;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+}
+header nav{
+    height: 100px;
+}
 body {
     font-family: "Poppins", sans-serif;
+    background-color: var(--background);
 }
 /*Logo*/
+#logo{
+    right: 42%;
+}
+
 img {
     display: block;
     position: relative;
     width: 50px;
     height: 50px;
-    right: 170px;
 }
-a {
+label {
     text-decoration: none;
-}
-li {
     list-style: none;
 }
+
 /*Navbar*/
 .navbar {
     display: flex;
@@ -32,7 +53,7 @@ li {
     background-color: #119da4;
     color: #fff;
 }
-.nav-links a {
+.nav-links label {
     color: #fff;
 }
 
@@ -42,12 +63,17 @@ li {
     gap: 1em;
     font-size: 18px;
 }
-.menu li:hover {
+.menu:hover{
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.menu label:hover {
     background-color: #4c9e9e;
     border-radius: 5px;
     transition: 0.3s ease;
 }
-.menu li {
+.menu label {
     padding: 5px 14px;
 }
 /* Menú Dropdown */
@@ -62,19 +88,27 @@ li {
     border-radius: 8px;
     top: 35px;
 }
-.dropdown li + li {
+.dropdown:hover{
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+.dropdown label + label {
     margin-top: 10px;
 }
-.dropdown li {
+.dropdown label {
     padding: 0.5em 1em;
     width: 8em;
     text-align: center;
 }
-.dropdown li:hover {
+.dropdown label:hover {
     background-color: #4c9e9e;
+    border-radius: 5px;
+    transition: 0.3s ease;
 }
 .services:hover .dropdown {
     display: block;
+    border-radius: 5px;
+    transition: 0.3s ease;
 }
 /*Navbar Responsive*/
 /* Verificación */
@@ -87,47 +121,57 @@ input[type="checkbox"] {
     font-size: 24px;
     user-select: none;
 }
-/* Responsive */
-@media (max-width: 700px) {
-    .menu {
-    display: none;
+/* CODIGO PRUEBA*/
+.containerTitle {
+    line-height: 1.8;
+    transition: all 600ms ease;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(0.90);
+    padding: 30px;
+    padding-bottom: 40px;
+}
+/* CODIGO ORIGINAL
+.containerTitle div{
     position: absolute;
-    background-color: teal;
-    right: 0;
-    left: 0;
-    text-align: center;
-    padding: 16px 0;
+    line-height: 1.8;
+    transition: all 600ms ease;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(0.90);
+    padding: 30px;
+    padding-bottom: 40px;
 }
-    .menu li:hover {
-    display: inline-block;
-    background-color: #4c9e9e;
-    transition: 0.3s ease;
-    }
-    .menu li + li {
-    margin-top: 12px;
-    }
-    input[type="checkbox"]:checked ~ .menu {
-    display: block;
-    }
-    .hamburger {
-    display: block;
-    }
-    .dropdown {
-    left: 50%;
-    top: 30px;
-    transform: translateX(35%);
-    }
-    .dropdown li:hover {
-    background-color: coral;
-    }
-    img {
-    display: block;
-    position: relative;
-    width: 50px;
-    height: 50px;
-    right: 40px;
-    }
+*/
+#radio1,#radio2,#radio3,#radio4,#radio5{
+    display: none;
 }
+
+#radio1:checked ~ .tab1,
+#radio2:checked ~ .tab2,
+#radio3:checked ~ .tab3,
+#radio4:checked ~ .tab4,
+#radio5:checked ~ .tab5
+{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition: all 600ms ease;
+}
+.title h2{
+	font-size: 50px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+}
+.text{
+	font-size: 30px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    justify-content: center;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
 .container{
     display: flex;
     flex-wrap: wrap;
@@ -135,6 +179,8 @@ input[type="checkbox"] {
     align-items: center;
     height:auto;
 }
+
+/* cards */
 .card {
     /*diseño*/
     background-color: var(--cBackgrdCard);
@@ -149,7 +195,8 @@ input[type="checkbox"] {
 
 .card .left-column img{
     width: auto;
-    height: 300px;
+    height: 400px;
+    overflow: hidden;
 }
 
 .card h6 {
@@ -193,7 +240,8 @@ input[type="checkbox"] {
 /*boton turno*/
 .btn1 {
     /*diseño*/
-    background: linear-gradient(180deg,#daf5a9,#d0fdda);
+    color: #fff;
+    background: linear-gradient(250deg, #093595,#119DA4);
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
     border-radius: 48px;
     font-size: 19.2px;
@@ -202,6 +250,9 @@ input[type="checkbox"] {
     padding: 12.8px 24px;
     align-self: flex-end;
 }
+.btn1:hover{
+    transform: scale(1.1);
+}
 .btn1::before{
     content: 'Solicitar turno';
 }
@@ -209,3 +260,147 @@ input[type="checkbox"] {
     top: -30px;
 }
 
+
+
+
+
+
+
+/* Responsive */
+@media (max-width: 700px) {
+    .title{
+        font-size: 40px;
+    }
+    .text{
+        font-size: 20px;
+    }
+	.container{           
+         display: flex;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        height:auto;
+	}
+    .menu {
+    display: none;
+    position: absolute;
+    background-color: teal;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+    }
+    .menu label:hover {
+    display: inline-block;
+    background-color: #4c9e9e;
+    transition: 0.3s ease;
+    }
+    .menu label + label {
+    margin-top: 12px;
+    }
+    input[type="checkbox"]:checked ~ .menu {
+    display: block;
+    }
+    .hamburger {
+    display: block;
+    }
+    .dropdown {
+    left: 50%;
+    top: 30px;
+    transform: translateX(35%);
+    }
+    .dropdown label:hover {
+    background-color: coral;
+    }
+    img {
+    display: block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    right: 40px;
+    }
+    .card .left-column img{
+        width: auto;
+        height: 400px;
+        overflow: hidden;
+    }
+    .card .left-column img{
+        display: none;
+
+    }
+}
+@media (min-width: 700px) {
+    body
+    .title{
+        font-size: 40px;
+    }
+    .text{
+        font-size: 20px;
+    }
+    .menu {
+    display: none;
+    position: absolute;
+    background-color: teal;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+    }
+    .menu li:hover {
+    display: inline-block;
+    background-color: #4c9e9e;
+    transition: 0.3s ease;
+    }
+    .menu li + li {
+    margin-top: 12px;
+    }
+    input[type="checkbox"]:checked ~ .menu {
+    display: block;
+    }
+    .hamburger {
+    display: block;
+    }
+    .dropdown {
+    left: 50%;
+    top: 30px;
+    transform: translateX(35%);
+    }
+    .dropdown li:hover {
+    background-color: coral;
+    }
+    img {
+    display: block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    right: 170px;
+    }
+    #logo {
+        right: 50%;
+    }   
+}
+@media (max-width: 1030px) {
+    #logo{
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+    }
+    .title{
+        font-size: 40px;
+    }
+    .text{
+        font-size: 20px;
+    }
+	.container{
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height:auto;
+	}
+    .card .left-column img{
+        width: auto;
+        height: 400px;
+        overflow: hidden;
+    }
+}
